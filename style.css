@@ -914,6 +914,8 @@ h1, h2, h3 {
   border-color: transparent;
   overflow: hidden;
   isolation: isolate;
+  clip-path: inset(0 round var(--raio));
+  -webkit-clip-path: inset(0 round var(--raio));
 }
 
 .produto-card--destaque::before {
@@ -921,7 +923,7 @@ h1, h2, h3 {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(155deg, rgba(87, 10, 42, 0.94) 0%, rgba(236, 72, 153, 0.88) 55%, rgba(236, 72, 153, 0.62) 100%);
+  background: linear-gradient(155deg, rgba(87, 10, 42, 0.96) 0%, rgba(236, 72, 153, 0.92) 55%, rgba(236, 72, 153, 0.84) 100%);
 }
 
 .produto-card--destaque .produto-icon {

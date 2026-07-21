@@ -14,7 +14,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 
@@ -59,6 +59,8 @@
 </head>
 <body>
 
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
 <header class="site-header" id="topo">
   <div class="header-inner">
     <a href="#inicio" class="logo">
@@ -100,6 +102,21 @@
 <main>
 
   <section class="hero" id="inicio">
+    <div class="hero-bg" aria-hidden="true">
+      <span class="hero-blob hero-blob--1"></span>
+      <span class="hero-blob hero-blob--2"></span>
+      <span class="hero-blob hero-blob--3"></span>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-photo hero-photo--1">
+        <img src="assets/foto-desinfetante-floral.jpg" alt="" loading="lazy">
+      </div>
+      <div class="hero-photo hero-photo--2">
+        <img src="assets/foto-alveja-pro-atacado.jpg" alt="" loading="lazy">
+      </div>
+    </div>
+
     <div class="hero-inner">
       <p class="hero-eyebrow">Kaká Limpeza — Loja 08 · Socorro-SP</p>
       <h1 class="hero-title">Tudo para limpeza, no atacado e no varejo</h1>
@@ -124,9 +141,14 @@
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.5 15 9l7 .9-5.1 4.8L18.2 21 12 17.4 5.8 21l1.3-6.3L2 9.9 9 9z"/></svg>
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.5 15 9l7 .9-5.1 4.8L18.2 21 12 17.4 5.8 21l1.3-6.3L2 9.9 9 9z"/></svg>
         </span>
-        <span>5,0 · 15 avaliações no Google</span>
+        <p class="sr-only">Nota 5,0 de 5 estrelas, com 15 avaliações no Google.</p>
+        <span class="hero-rating-text" aria-hidden="true"><span class="js-counter" data-decimals="1">5,0</span> · <span class="js-counter">15</span> avaliações no Google</span>
       </div>
     </div>
+
+    <svg class="hero-wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="currentColor" d="M0,24 C240,60 480,0 720,18 C960,36 1200,60 1440,20 L1440,60 L0,60 Z"></path>
+    </svg>
   </section>
 
   <section class="section sobre" id="sobre">
@@ -138,9 +160,10 @@
         <p>Preço econômico, entrega rápida e uma variedade enorme de produtos são os pontos mais lembrados por quem já comprou aqui — e tem sempre novidade chegando na loja.</p>
       </div>
 
-      <div class="sobre-panel fade-in">
+      <figure class="sobre-panel fade-in">
         <img src="assets/foto-prateleira-desinfetantes-toalhas.jpg" alt="Prateleira da loja Kaká Limpeza com toalhas de papel e desinfetantes" class="sobre-img">
-      </div>
+        <figcaption class="sobre-caption">Prateleira de produtos na Loja 08</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -151,8 +174,8 @@
         <h2 class="section-title">Nossos diferenciais</h2>
       </div>
 
-      <div class="diferenciais-grid">
-        <article class="diferencial-card fade-in">
+      <div class="diferenciais-grid fade-in-group">
+        <article class="diferencial-card fade-in-item">
           <span class="diferencial-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 8V4h6v4"/><path d="M7 8h10l1 12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2z"/><path d="M12 3v1"/></svg>
           </span>
@@ -160,7 +183,7 @@
           <p>Preços pensados para caber no seu bolso, no atacado ou no varejo.</p>
         </article>
 
-        <article class="diferencial-card fade-in">
+        <article class="diferencial-card fade-in-item">
           <span class="diferencial-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v8H3z"/><path d="M14 10h4l3 3v2h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
           </span>
@@ -168,7 +191,7 @@
           <p>Facilidade de compra e entrega ágil, para você não ficar esperando.</p>
         </article>
 
-        <article class="diferencial-card fade-in">
+        <article class="diferencial-card fade-in-item">
           <span class="diferencial-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
           </span>
@@ -176,7 +199,7 @@
           <p>Variedades a rodo em produtos de limpeza, higiene e utilidades.</p>
         </article>
 
-        <article class="diferencial-card fade-in">
+        <article class="diferencial-card fade-in-item">
           <span class="diferencial-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 3.9L18 8l-3.2 2.8.9 4.2L12 13l-3.7 2 .9-4.2L6 8l4.2-1.1z"/><path d="M5 19l1-2 1 2-1 1z"/><path d="M18 19l1-2 1 2-1 1z"/></svg>
           </span>
@@ -184,7 +207,7 @@
           <p>Novidade sempre chegando, com produtos novos toda hora na loja.</p>
         </article>
 
-        <article class="diferencial-card fade-in">
+        <article class="diferencial-card fade-in-item">
           <span class="diferencial-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-6 9 6"/><path d="M5 9v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9"/><path d="M10 20v-6h4v6"/></svg>
           </span>
@@ -192,7 +215,7 @@
           <p>Atende tanto quem compra para casa quanto quem compra para revender.</p>
         </article>
 
-        <article class="diferencial-card fade-in">
+        <article class="diferencial-card fade-in-item">
           <span class="diferencial-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
           </span>
@@ -211,8 +234,8 @@
         <p class="section-subtitle">Sete categorias com tudo que sua casa ou seu comércio precisam.</p>
       </div>
 
-      <div class="produtos-grid">
-        <article class="produto-card fade-in">
+      <div class="produtos-grid fade-in-group">
+        <article class="produto-card fade-in-item">
           <span class="produto-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6l1 4H8l1-4Z"/><path d="M7 7h10l1.2 12.2A2 2 0 0 1 16.2 21H7.8a2 2 0 0 1-2-1.8L7 7Z"/><path d="M9.5 12.5c0-1 .8-1.8 1.8-1.8h1.4c1 0 1.8.8 1.8 1.8v.2c0 1-.8 1.8-1.8 1.8h-1.4A1.8 1.8 0 0 1 9.5 12.7v-.2Z"/></svg>
           </span>
@@ -220,7 +243,7 @@
           <p>Detergentes, desinfetantes, multiuso e tudo para deixar a casa em ordem.</p>
         </article>
 
-        <article class="produto-card fade-in">
+        <article class="produto-card fade-in-item">
           <span class="produto-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c4-2.6 6-5.4 6-8.6C18 8.6 15.3 5 12 3c-3.3 2-6 5.6-6 9.4 0 3.2 2 6 6 8.6Z"/><path d="M9.5 13.2c.3 1.6 1.4 2.8 2.5 3.3"/></svg>
           </span>
@@ -228,7 +251,7 @@
           <p>Produtos de higiene pessoal e cuidados do dia a dia.</p>
         </article>
 
-        <article class="produto-card fade-in">
+        <article class="produto-card fade-in-item">
           <span class="produto-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 11.2a1.8 1.8 0 0 1-1.8 1.8H8.8A1.8 1.8 0 0 1 7 19.2L6 8Z"/><path d="M4.5 8h15"/><path d="M9 8V6.5A1.5 1.5 0 0 1 10.5 5h3A1.5 1.5 0 0 1 15 6.5V8"/></svg>
           </span>
@@ -236,7 +259,7 @@
           <p>Copos, pratos, guardanapos e sacos de lixo para todo tipo de uso.</p>
         </article>
 
-        <article class="produto-card fade-in">
+        <article class="produto-card fade-in-item">
           <span class="produto-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 3 6 17.5"/><path d="M6 17.5 3 21l3.6-1.2 2.2-4.2"/><path d="M13.5 3c2 .3 4.6 1.6 5.6 3.6.9 1.8-.2 3-1.6 3.3-2 .4-5-.6-6.4-2.6"/></svg>
           </span>
@@ -244,7 +267,7 @@
           <p>Vassouras, rodos, baldes, panos e acessórios para limpeza.</p>
         </article>
 
-        <article class="produto-card fade-in">
+        <article class="produto-card fade-in-item">
           <span class="produto-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3"/><path d="M8.5 5.5 10 8"/><path d="M15.5 5.5 14 8"/><rect x="8" y="8" width="8" height="6" rx="1.5"/><path d="M9 14v3.5A2.5 2.5 0 0 0 11.5 20h1a2.5 2.5 0 0 0 2.5-2.5V14"/></svg>
           </span>
@@ -252,7 +275,7 @@
           <p>Aromatizadores e produtos para deixar o ambiente sempre agradável.</p>
         </article>
 
-        <article class="produto-card produto-card--destaque fade-in">
+        <article class="produto-card produto-card--destaque fade-in-item">
           <span class="produto-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8 8.5-4.5L20.5 8 12 12.5 3.5 8Z"/><path d="M3.5 8v8L12 20.5 20.5 16V8"/><path d="M12 12.5v8"/></svg>
           </span>
@@ -260,7 +283,7 @@
           <p>Fardos e caixas fechadas com condições especiais para quem compra em quantidade maior. Seja para revender ou para abastecer um comércio, a Kaká Limpeza atende com preço diferenciado, grande variedade de produtos disponíveis e a mesma entrega rápida de sempre para toda a região de Socorro-SP.</p>
         </article>
 
-        <article class="produto-card fade-in">
+        <article class="produto-card fade-in-item">
           <span class="produto-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 13.6 8l4.7.4-3.6 3.1 1.1 4.6L12 13.7l-3.8 2.4 1.1-4.6-3.6-3.1L10.4 8 12 3.5Z"/></svg>
           </span>
@@ -276,27 +299,59 @@
       <div class="section-header fade-in">
         <p class="eyebrow">Quem compra, recomenda</p>
         <h2 class="section-title">O que dizem nossos clientes</h2>
-        <p class="section-subtitle">Nota 5,0 em 15 avaliações no Google.</p>
+        <p class="sr-only">Nota 5,0 em 15 avaliações no Google.</p>
       </div>
 
-      <div class="avaliacoes-grid">
-        <article class="avaliacao-card fade-in">
-          <span class="avaliacao-stars" aria-hidden="true">★★★★★</span>
-          <p class="avaliacao-text">"Atendimento muito bom, atendentes muito educadas, com preço muito justo e produtos de boa qualidade. Recomendo muito."</p>
-          <p class="avaliacao-autor">Júlio Silva</p>
-        </article>
+      <div class="rating-showcase fade-in" aria-hidden="true">
+        <div class="rating-showcase-score">
+          <svg class="rating-ring" viewBox="0 0 84 84" aria-hidden="true">
+            <circle class="rating-ring-track" cx="42" cy="42" r="34"></circle>
+            <circle class="rating-ring-fill" cx="42" cy="42" r="34"></circle>
+          </svg>
+          <span class="rating-showcase-number js-counter" data-decimals="1">5,0</span>
+        </div>
+        <div class="rating-showcase-info">
+          <span class="stars">★★★★★</span>
+          <p><span class="js-counter">15</span> avaliações no Google</p>
+        </div>
+      </div>
 
-        <article class="avaliacao-card fade-in">
-          <span class="avaliacao-stars" aria-hidden="true">★★★★★</span>
-          <p class="avaliacao-text">"Melhor loja de produtos de limpeza e utensílios para casa da região. Preço justo e entrega rápida."</p>
-          <p class="avaliacao-autor">Francieli Domingues</p>
-        </article>
+      <div class="depoimentos-carousel fade-in">
+        <div class="depoimentos-track-wrap">
+          <div class="depoimentos-track" id="depoimentosTrack" tabindex="0" role="region" aria-label="Depoimentos de clientes, use as setas do teclado para navegar">
+            <article class="avaliacao-card" aria-label="Depoimento 1 de 3">
+              <span class="avaliacao-stars" aria-hidden="true">★★★★★</span>
+              <p class="avaliacao-text">"Atendimento muito bom, atendentes muito educadas, com preço muito justo e produtos de boa qualidade. Recomendo muito."</p>
+              <p class="avaliacao-autor">Júlio Silva</p>
+            </article>
 
-        <article class="avaliacao-card fade-in">
-          <span class="avaliacao-stars" aria-hidden="true">★★★★★</span>
-          <p class="avaliacao-text">"Lugar muito bem equipado, produtos de alta qualidade, a entrega é super rápida, tudo muito bom!"</p>
-          <p class="avaliacao-autor">Elissa Pistoni Oliveira</p>
-        </article>
+            <article class="avaliacao-card" aria-label="Depoimento 2 de 3">
+              <span class="avaliacao-stars" aria-hidden="true">★★★★★</span>
+              <p class="avaliacao-text">"Melhor loja de produtos de limpeza e utensílios para casa da região. Preço justo e entrega rápida."</p>
+              <p class="avaliacao-autor">Francieli Domingues</p>
+            </article>
+
+            <article class="avaliacao-card" aria-label="Depoimento 3 de 3">
+              <span class="avaliacao-stars" aria-hidden="true">★★★★★</span>
+              <p class="avaliacao-text">"Lugar muito bem equipado, produtos de alta qualidade, a entrega é super rápida, tudo muito bom!"</p>
+              <p class="avaliacao-autor">Elissa Pistoni Oliveira</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="carousel-controls">
+          <button type="button" class="carousel-arrow" id="depoimentosPrev" aria-label="Depoimento anterior">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <div class="carousel-dots" id="depoimentosDots">
+            <button type="button" class="carousel-dot is-active" data-index="0" role="tab" aria-selected="true" aria-label="Ver depoimento 1"></button>
+            <button type="button" class="carousel-dot" data-index="1" role="tab" aria-selected="false" aria-label="Ver depoimento 2"></button>
+            <button type="button" class="carousel-dot" data-index="2" role="tab" aria-selected="false" aria-label="Ver depoimento 3"></button>
+          </div>
+          <button type="button" class="carousel-arrow" id="depoimentosNext" aria-label="Próximo depoimento">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -395,6 +450,10 @@
 <a class="whatsapp-float" href="https://wa.me/5519998106055?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20produtos%20da%20Kak%C3%A1%20Limpeza%20Loja%2008!" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
   <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.4-2 1.5-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-5-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .5 0 .7.5.3.7.9 2.2 1 2.4.1.2.1.4 0 .6-.1.2-.2.4-.4.6-.2.2-.4.5-.5.6-.2.2-.4.4-.2.8.2.4.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.8.4.2.6.1.8-.1.2-.3.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2 .9 2.3 1.1.3.2.5.3.6.4.1.2.1.9-.1 1.6Z"/></svg>
 </a>
+
+<button type="button" class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+</button>
 
 <script src="script.js"></script>
 </body>

@@ -695,17 +695,92 @@ h1, h2, h3 {
   transform: scale(1.06);
 }
 
-.sobre-caption {
+/* ---- Carrossel de fotos (Sobre) ---- */
+.sobre-carousel-track-wrap {
+  overflow: hidden;
+}
+
+.sobre-carousel-track {
+  display: flex;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.sobre-carousel-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.sobre-carousel-slide .sobre-img {
+  transition: transform 6s linear;
+}
+
+.sobre-carousel::after {
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 16px 18px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
+  height: 40%;
+  background: linear-gradient(to top, rgba(52, 22, 36, 0.55), transparent);
+  pointer-events: none;
+}
+
+.sobre-carousel-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.sobre-carousel-dots .carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--branco);
+  background: rgba(255, 255, 255, 0.35);
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.sobre-carousel-dots .carousel-dot.is-active {
+  background: var(--branco);
+  width: 20px;
+  border-radius: 5px;
+}
+
+.sobre-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(52, 22, 36, 0.45);
   color: var(--branco);
-  background: linear-gradient(to top, rgba(52, 22, 36, 0.82), transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.sobre-carousel-arrow:hover {
+  background: rgba(52, 22, 36, 0.75);
+}
+
+.sobre-carousel-arrow--prev {
+  left: 10px;
+}
+
+.sobre-carousel-arrow--next {
+  right: 10px;
 }
 
 /* =========================================================
@@ -1198,6 +1273,17 @@ h1, h2, h3 {
 
 .footer-col a {
   transition: color 0.2s ease;
+}
+
+.footer-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-contact-link svg {
+  flex-shrink: 0;
+  color: var(--branco);
 }
 
 .footer-col a:hover {

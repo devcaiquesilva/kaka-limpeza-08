@@ -105,23 +105,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ---------- Carrossel de depoimentos ----------
-  (function initCarousel() {
-    var track = document.getElementById('depoimentosTrack');
+  // ---------- Carrossel genérico (depoimentos + fotos de produtos) ----------
+  function initCarousel(opts) {
+    var track = document.getElementById(opts.trackId);
     if (!track) { return; }
 
-    var slides = track.querySelectorAll('.avaliacao-card');
-    var dotsWrap = document.getElementById('depoimentosDots');
-    var prevBtn = document.getElementById('depoimentosPrev');
-    var nextBtn = document.getElementById('depoimentosNext');
-    var wrap = document.querySelector('.depoimentos-carousel');
+    var slides = track.querySelectorAll(opts.slideSelector);
+    var dotsWrap = document.getElementById(opts.dotsId);
+    var prevBtn = document.getElementById(opts.prevId);
+    var nextBtn = document.getElementById(opts.nextId);
+    var wrap = document.querySelector(opts.wrapSelector);
     var total = slides.length;
 
     if (!total) { return; }
 
     var index = 0;
     var timer = null;
-    var autoplayDelay = 6000;
+    var autoplayDelay = opts.autoplayDelay || 6000;
 
     function goTo(i) {
       index = (i + total) % total;
@@ -193,7 +193,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
     goTo(0);
     startAutoplay();
-  })();
+  }
+
+  initCarousel({
+    trackId: 'depoimentosTrack',
+    slideSelector: '.avaliacao-card',
+    dotsId: 'depoimentosDots',
+    prevId: 'depoimentosPrev',
+    nextId: 'depoimentosNext',
+    wrapSelector: '.depoimentos-carousel',
+    autoplayDelay: 6000
+  });
+
+  initCarousel({
+    trackId: 'sobreFotosTrack',
+    slideSelector: '.sobre-carousel-slide',
+    dotsId: 'sobreFotosDots',
+    prevId: 'sobreFotosPrev',
+    nextId: 'sobreFotosNext',
+    wrapSelector: '.sobre-carousel',
+    autoplayDelay: 4500
+  });
 
   // ---------- Header, progresso de leitura, parallax e voltar ao topo ----------
   var siteHeader = document.getElementById('topo');

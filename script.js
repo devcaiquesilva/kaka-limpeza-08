@@ -278,4 +278,36 @@ document.addEventListener('DOMContentLoaded', function () {
     anoAtual.textContent = new Date().getFullYear();
   }
 
+  // ---------- Google Analytics 4: eventos de clique ----------
+  function trackEvent(eventName, params) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, params || {});
+    }
+  }
+
+  document.querySelectorAll('.produto-kaka-body .btn[data-produto]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      trackEvent('clique_whatsapp_produto', { produto: link.getAttribute('data-produto') });
+    });
+  });
+
+  var comoChegarLink = document.querySelector('.contato-actions .btn-outline');
+  if (comoChegarLink) {
+    comoChegarLink.addEventListener('click', function () {
+      trackEvent('clique_como_chegar');
+    });
+  }
+
+  document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      trackEvent('clique_telefone');
+    });
+  });
+
+  document.querySelectorAll('a[href*="wa.me"]:not([data-produto])').forEach(function (link) {
+    link.addEventListener('click', function () {
+      trackEvent('clique_whatsapp_geral');
+    });
+  });
+
 });

@@ -215,6 +215,16 @@ document.addEventListener('DOMContentLoaded', function () {
     autoplayDelay: 4500
   });
 
+  initCarousel({
+    trackId: 'lojaFotosTrack',
+    slideSelector: '.sobre-carousel-slide',
+    dotsId: 'lojaFotosDots',
+    prevId: 'lojaFotosPrev',
+    nextId: 'lojaFotosNext',
+    wrapSelector: '.loja-carousel',
+    autoplayDelay: 5000
+  });
+
   // ---------- Header, progresso de leitura, parallax e voltar ao topo ----------
   var siteHeader = document.getElementById('topo');
   var backToTop = document.getElementById('backToTop');

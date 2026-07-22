@@ -947,6 +947,83 @@ h1, h2, h3 {
 }
 
 /* =========================================================
+   Linha de Produtos Kaká
+   ========================================================= */
+.linha-kaka-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.produto-kaka-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--branco);
+  border: 1px solid var(--rosa-bg);
+  border-radius: var(--raio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+}
+
+.produto-kaka-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-hover);
+}
+
+.produto-kaka-img-wrap {
+  aspect-ratio: 3 / 4;
+  background: var(--rosa-bg);
+  overflow: hidden;
+}
+
+.produto-kaka-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.produto-kaka-card:hover .produto-kaka-img {
+  transform: scale(1.05);
+}
+
+.produto-kaka-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.produto-kaka-selo {
+  align-self: flex-start;
+  background: var(--rosa-bg);
+  color: var(--rosa-escuro);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 4px;
+}
+
+.produto-kaka-body h3 {
+  font-size: 1.15rem;
+}
+
+.produto-kaka-body p {
+  color: var(--texto-suave);
+  font-size: 0.94rem;
+  margin-bottom: 6px;
+}
+
+.produto-kaka-body .btn {
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+/* =========================================================
    Avaliações
    ========================================================= */
 .rating-showcase {
@@ -1507,6 +1584,10 @@ h1, h2, h3 {
    ========================================================= */
 @media (min-width: 1024px) {
   .diferenciais-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .linha-kaka-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 

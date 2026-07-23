@@ -1746,10 +1746,46 @@ h1, h2, h3 {
   box-shadow: 0 4px 14px rgba(163, 19, 79, 0.06);
 }
 
-.catalogo-busca {
-  position: relative;
+.catalogo-busca-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   max-width: 420px;
   margin: 0 auto 14px;
+}
+
+.catalogo-busca {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.catalogo-filtro-toggle {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  border: 1.5px solid var(--rosa-claro);
+  background: var(--branco);
+  color: var(--rosa-escuro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.catalogo-filtro-toggle:hover,
+.catalogo-filtro-toggle.is-active {
+  background: var(--rosa);
+  border-color: var(--rosa);
+  color: var(--branco);
+}
+
+@media (min-width: 768px) {
+  .catalogo-filtro-toggle {
+    display: none;
+  }
 }
 
 .catalogo-busca input {
@@ -1935,18 +1971,32 @@ h1, h2, h3 {
 }
 
 @media (min-width: 768px) {
-  .catalogo-busca {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 14px 0 0;
-  }
-
   .catalogo-toolbar-inner {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
+  }
+
+  .catalogo-busca-row {
+    margin: 0;
+  }
+}
+
+/* No mobile, as categorias comecam recolhidas: so aparecem com o botao de filtro ou a classe is-open */
+@media (max-width: 767px) {
+  .catalogo-categorias {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .catalogo-categorias.is-open {
+    max-height: 2000px;
+    opacity: 1;
+    pointer-events: auto;
+    margin-top: 14px;
   }
 }
 

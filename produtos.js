@@ -130,12 +130,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
   render();
 
-  // ---------- Esconde os chips de categoria ao rolar para baixo, mantendo a busca visível ----------
+  var MOBILE_BREAKPOINT = 768;
+
+  // ---------- Mobile: botão de grade abre/fecha os chips de categoria (comecam recolhidos) ----------
+  var filtroToggle = document.getElementById('catalogoFiltroToggle');
+  if (filtroToggle && categoriasWrap) {
+    filtroToggle.addEventListener('click', function () {
+      var aberto = categoriasWrap.classList.toggle('is-open');
+      filtroToggle.classList.toggle('is-active', aberto);
+      filtroToggle.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+      filtroToggle.setAttribute('aria-label', aberto ? 'Esconder categorias' : 'Mostrar categorias');
+    });
+  }
+
+  // ---------- Desktop: esconde os chips de categoria ao rolar para baixo, mantendo a busca visível ----------
   if (categoriasWrap) {
     var ultimoScroll = window.scrollY || window.pageYOffset;
     var tickingScroll = false;
 
     function onScrollToolbar() {
+      if (window.innerWidth < MOBILE_BREAKPOINT) {
+        tickingScroll = false;
+        return;
+      }
+
       var scrollAtual = window.scrollY || window.pageYOffset;
       var diferenca = scrollAtual - ultimoScroll;
 

@@ -685,8 +685,9 @@ h1, h2, h3 {
 
 .sobre-img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
+  object-position: center 25%;
   display: block;
   transition: transform 0.6s var(--ease-out);
 }
@@ -1225,6 +1226,55 @@ h1, h2, h3 {
 .carousel-dot.is-active {
   background: var(--rosa-escuro);
   transform: scale(1.35);
+}
+
+/* =========================================================
+   Grupo de ofertas
+   ========================================================= */
+.grupo-ofertas-card {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  padding: clamp(32px, 6vw, 56px);
+  border-radius: var(--raio);
+  background: linear-gradient(135deg, var(--rosa-claro), var(--rosa));
+  box-shadow: var(--sombra);
+  color: var(--branco);
+}
+
+.grupo-ofertas-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  margin-bottom: 16px;
+}
+
+.grupo-ofertas-card .eyebrow {
+  color: var(--branco);
+  opacity: 0.9;
+}
+
+.grupo-ofertas-card .section-title {
+  color: var(--branco);
+}
+
+.grupo-ofertas-card p {
+  color: var(--branco);
+  opacity: 0.95;
+  margin-bottom: 24px;
+}
+
+.grupo-ofertas-card .btn-primary {
+  background: var(--branco);
+  color: var(--rosa-escuro);
+}
+
+.grupo-ofertas-card .btn-primary:hover {
+  background: var(--rosa-bg);
 }
 
 /* =========================================================

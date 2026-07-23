@@ -976,7 +976,7 @@ h1, h2, h3 {
 
 .produto-kaka-img-wrap {
   aspect-ratio: 941 / 1672;
-  background: var(--texto);
+  background: var(--rosa-bg);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -1649,6 +1649,25 @@ h1, h2, h3 {
 
   .linha-kaka-grid {
     grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+  }
+
+  .produto-kaka-card--central {
+    transform: scale(1.06);
+    position: relative;
+    z-index: 1;
+  }
+
+  .produto-kaka-card--lateral {
+    transform: scale(0.96);
+  }
+
+  .produto-kaka-card--central:hover {
+    transform: scale(1.06) translateY(-6px);
+  }
+
+  .produto-kaka-card--lateral:hover {
+    transform: scale(0.96) translateY(-6px);
   }
 
   .produto-card {

@@ -976,7 +976,7 @@ h1, h2, h3 {
 
 .produto-kaka-img-wrap {
   aspect-ratio: 941 / 1672;
-  background: var(--rosa-bg);
+  background: var(--texto);
   overflow: hidden;
   display: flex;
   align-items: center;

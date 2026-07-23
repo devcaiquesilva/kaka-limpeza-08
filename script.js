@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  document.querySelectorAll('.produto-kaka-body .btn[data-produto]').forEach(function (link) {
+  document.querySelectorAll('.btn[data-produto]').forEach(function (link) {
     link.addEventListener('click', function () {
       trackEvent('clique_whatsapp_produto', { produto: link.getAttribute('data-produto') });
     });

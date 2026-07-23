@@ -129,4 +129,33 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   render();
+
+  // ---------- Esconde os chips de categoria ao rolar para baixo, mantendo a busca visível ----------
+  if (categoriasWrap) {
+    var ultimoScroll = window.scrollY || window.pageYOffset;
+    var tickingScroll = false;
+
+    function onScrollToolbar() {
+      var scrollAtual = window.scrollY || window.pageYOffset;
+      var diferenca = scrollAtual - ultimoScroll;
+
+      if (scrollAtual < 80) {
+        categoriasWrap.classList.remove('is-hidden');
+      } else if (diferenca > 4) {
+        categoriasWrap.classList.add('is-hidden');
+      } else if (diferenca < -4) {
+        categoriasWrap.classList.remove('is-hidden');
+      }
+
+      ultimoScroll = scrollAtual;
+      tickingScroll = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!tickingScroll) {
+        window.requestAnimationFrame(onScrollToolbar);
+        tickingScroll = true;
+      }
+    }, { passive: true });
+  }
 });

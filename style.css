@@ -1650,24 +1650,25 @@ h1, h2, h3 {
   .linha-kaka-grid {
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
+    gap: 44px;
   }
 
   .produto-kaka-card--central {
-    transform: scale(1.06);
+    transform: scale(1.08);
     position: relative;
     z-index: 1;
   }
 
   .produto-kaka-card--lateral {
-    transform: scale(0.96);
+    transform: scale(0.88);
   }
 
   .produto-kaka-card--central:hover {
-    transform: scale(1.06) translateY(-6px);
+    transform: scale(1.08) translateY(-6px);
   }
 
   .produto-kaka-card--lateral:hover {
-    transform: scale(0.96) translateY(-6px);
+    transform: scale(0.88) translateY(-6px);
   }
 
   .produto-card {

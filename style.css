@@ -1970,6 +1970,12 @@ h1, h2, h3 {
   padding: 12px 0 8px;
 }
 
+@media (min-width: 640px) {
+  .catalogo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (min-width: 768px) {
   .catalogo-toolbar-inner {
     display: flex;
@@ -1981,6 +1987,16 @@ h1, h2, h3 {
 
   .catalogo-busca-row {
     margin: 0;
+  }
+
+  .catalogo-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalogo-grid {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
